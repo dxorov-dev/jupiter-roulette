@@ -1,0 +1,232 @@
+export type Language = 'ru' | 'tr' | 'en' | 'id' | 'es' | 'ms' | 'ko'
+
+export const LANGUAGE_NAMES: Record<Language, string> = {
+  ru: 'Русский',
+  tr: 'Türkçe',
+  en: 'English',
+  id: 'Bahasa Indonesia',
+  es: 'Español',
+  ms: 'Bahasa Melayu',
+  ko: '한국어'
+}
+
+export const LANGUAGE_FLAGS: Record<Language, string> = {
+  ru: '🇷🇺',
+  tr: '🇹🇷',
+  en: '🇬🇧',
+  id: '🇮🇩',
+  es: '🇪🇸',
+  ms: '🇲🇾',
+  ko: '🇰🇷'
+}
+
+export type TranslationKey =
+  | 'title'
+  | 'selectLanguage'
+  | 'ready'
+  | 'addedNumber'
+  | 'deletedNumber'
+  | 'baseCleared'
+  | 'needMinNumbers'
+  | 'predicting'
+  | 'predictionComplete'
+  | 'predictionError'
+  | 'numbersInBase'
+  | 'minRequired'
+  | 'quickButtons'
+  | 'delete'
+  | 'predict'
+  | 'clear'
+  | 'lastNumbers'
+  | 'noNumbers'
+  | 'currentBase'
+  | 'noNumbersHint'
+  | 'prediction'
+  | 'mainDozen'
+  | 'columns'
+  | 'redBlack'
+
+export const translations: Record<Language, Record<TranslationKey, string>> = {
+  ru: {
+    title: 'JUPITER',
+    selectLanguage: 'Выберите язык',
+    ready: '✅ Готов к работе',
+    addedNumber: '✅ Число добавлено',
+    deletedNumber: '🗑 Удалено последнее',
+    baseCleared: '✅ База очищена',
+    needMinNumbers: '⚠️ Нужно минимум 4 числа',
+    predicting: '🔄 Прогнозирование...',
+    predictionComplete: '✅ Прогноз готов',
+    predictionError: '❌ Ошибка прогноза',
+    numbersInBase: 'Чисел в базе:',
+    minRequired: 'мин. 4',
+    quickButtons: '🔢 БЫСТРЫЕ КНОПКИ',
+    delete: 'Удалить',
+    predict: 'Прогноз',
+    clear: 'Очистить',
+    lastNumbers: '📜 Последние 20 чисел',
+    noNumbers: 'Нет чисел',
+    currentBase: '📋 ТЕКУЩАЯ БАЗА ЧИСЕЛ',
+    noNumbersHint: 'Нет чисел. Нажмите на кнопки.',
+    prediction: '🔮 ПРОГНОЗ',
+    mainDozen: '🎯 ОСНОВНАЯ ДЮЖИНА',
+    columns: '📊 КОЛОНЫ',
+    redBlack: '🎲 КРАСНОЕ/ЧЕРНОЕ',
+  },
+  tr: {
+    title: 'JUPITER',
+    selectLanguage: 'Dil seçin',
+    ready: '✅ Hazır',
+    addedNumber: '✅ Sayı eklendi',
+    deletedNumber: '🗑 Silindi',
+    baseCleared: '✅ Temizlendi',
+    needMinNumbers: '⚠️ En az 4 sayı gerekli',
+    predicting: '🔄 Tahmin yapılıyor...',
+    predictionComplete: '✅ Tahmin hazır',
+    predictionError: '❌ Tahmin hatası',
+    numbersInBase: 'Sayı sayısı:',
+    minRequired: 'min. 4',
+    quickButtons: '🔢 HIZLI DÜĞMELER',
+    delete: 'Sil',
+    predict: 'Tahmin',
+    clear: 'Temizle',
+    lastNumbers: '📜 Son 20 sayı',
+    noNumbers: 'Sayı yok',
+    currentBase: '📋 MEVCUT VERİ TABANI',
+    noNumbersHint: 'Sayı yok. Düğmelere tıklayın.',
+    prediction: '🔮 TAHMİN',
+    mainDozen: '🎯 ANA DÜZİNE',
+    columns: '📊 SÜTUNLAR',
+    redBlack: '🎲 KIRMIZI/SİYAH',
+  },
+  en: {
+    title: 'JUPITER',
+    selectLanguage: 'Select language',
+    ready: '✅ Ready',
+    addedNumber: '✅ Number added',
+    deletedNumber: '🗑 Deleted',
+    baseCleared: '✅ Cleared',
+    needMinNumbers: '⚠️ Need at least 4 numbers',
+    predicting: '🔄 Predicting...',
+    predictionComplete: '✅ Prediction ready',
+    predictionError: '❌ Prediction error',
+    numbersInBase: 'Numbers in base:',
+    minRequired: 'min. 4',
+    quickButtons: '🔢 QUICK BUTTONS',
+    delete: 'Delete',
+    predict: 'Predict',
+    clear: 'Clear',
+    lastNumbers: '📜 Last 20 numbers',
+    noNumbers: 'No numbers',
+    currentBase: '📋 CURRENT DATABASE',
+    noNumbersHint: 'No numbers. Click buttons.',
+    prediction: '🔮 PREDICTION',
+    mainDozen: '🎯 MAIN DOZEN',
+    columns: '📊 COLUMNS',
+    redBlack: '🎲 RED/BLACK',
+  },
+  id: {
+    title: 'JUPITER',
+    selectLanguage: 'Pilih bahasa',
+    ready: '✅ Siap',
+    addedNumber: '✅ Nomor ditambahkan',
+    deletedNumber: '🗑 Dihapus',
+    baseCleared: '✅ Dibersihkan',
+    needMinNumbers: '⚠️ Butuh minimal 4 angka',
+    predicting: '🔄 Memprediksi...',
+    predictionComplete: '✅ Prediksi siap',
+    predictionError: '❌ Kesalahan prediksi',
+    numbersInBase: 'Jumlah angka:',
+    minRequired: 'min. 4',
+    quickButtons: '🔢 TOMBOL CEPAT',
+    delete: 'Hapus',
+    predict: 'Prediksi',
+    clear: 'Bersihkan',
+    lastNumbers: '📜 20 angka terakhir',
+    noNumbers: 'Tidak ada angka',
+    currentBase: '📋 DATABASE SAAT INI',
+    noNumbersHint: 'Tidak ada angka. Klik tombol.',
+    prediction: '🔮 PREDIKSI',
+    mainDozen: '🎯 LUSIN UTAMA',
+    columns: '📊 KOLOM',
+    redBlack: '🎲 MERAH/HITAM',
+  },
+  es: {
+    title: 'JUPITER',
+    selectLanguage: 'Seleccionar idioma',
+    ready: '✅ Listo',
+    addedNumber: '✅ Número añadido',
+    deletedNumber: '🗑 Eliminado',
+    baseCleared: '✅ Limpiado',
+    needMinNumbers: '⚠️ Se necesitan al menos 4 números',
+    predicting: '🔄 Prediciendo...',
+    predictionComplete: '✅ Predicción lista',
+    predictionError: '❌ Error de predicción',
+    numbersInBase: 'Números en base:',
+    minRequired: 'mín. 4',
+    quickButtons: '🔢 BOTONES RÁPIDOS',
+    delete: 'Eliminar',
+    predict: 'Predecir',
+    clear: 'Limpiar',
+    lastNumbers: '📜 Últimos 20 números',
+    noNumbers: 'Sin números',
+    currentBase: '📋 BASE DE DATOS ACTUAL',
+    noNumbersHint: 'Sin números. Haz clic en los botones.',
+    prediction: '🔮 PREDICCIÓN',
+    mainDozen: '🎯 DOCENA PRINCIPAL',
+    columns: '📊 COLUMNAS',
+    redBlack: '🎲 ROJO/NEGRO',
+  },
+  ms: {
+    title: 'JUPITER',
+    selectLanguage: 'Pilih bahasa',
+    ready: '✅ Sedia',
+    addedNumber: '✅ Nombor ditambah',
+    deletedNumber: '🗑 Dihapus',
+    baseCleared: '✅ Dibersihkan',
+    needMinNumbers: '⚠️ Perlu sekurang-kurangnya 4 nombor',
+    predicting: '🔄 Meramal...',
+    predictionComplete: '✅ Ramalan siap',
+    predictionError: '❌ Ralat ramalan',
+    numbersInBase: 'Nombor dalam pangkalan:',
+    minRequired: 'min. 4',
+    quickButtons: '🔢 BUTANG PANTAS',
+    delete: 'Hapus',
+    predict: 'Ramal',
+    clear: 'Bersihkan',
+    lastNumbers: '📜 20 nombor terakhir',
+    noNumbers: 'Tiada nombor',
+    currentBase: '📋 PANGKALAN DATA SEMASA',
+    noNumbersHint: 'Tiada nombor. Klik butang.',
+    prediction: '🔮 RAMALAN',
+    mainDozen: '🎯 DUKUN UTAMA',
+    columns: '📊 KOLUM',
+    redBlack: '🎲 MERAH/HITAM',
+  },
+  ko: {
+    title: 'JUPITER',
+    selectLanguage: '언어 선택',
+    ready: '✅ 준비됨',
+    addedNumber: '✅ 숫자 추가됨',
+    deletedNumber: '🗑 삭제됨',
+    baseCleared: '✅ 초기화됨',
+    needMinNumbers: '⚠️ 최소 4개의 숫자 필요',
+    predicting: '🔄 예측 중...',
+    predictionComplete: '✅ 예측 완료',
+    predictionError: '❌ 예측 오류',
+    numbersInBase: '저장된 숫자:',
+    minRequired: '최소 4개',
+    quickButtons: '🔢 빠른 버튼',
+    delete: '삭제',
+    predict: '예측',
+    clear: '초기화',
+    lastNumbers: '📜 최근 20개 숫자',
+    noNumbers: '숫자 없음',
+    currentBase: '📋 현재 데이터베이스',
+    noNumbersHint: '숫자 없음. 버튼을 클릭하세요.',
+    prediction: '🔮 예측',
+    mainDozen: '🎯 메인 더즌',
+    columns: '📊 컬럼',
+    redBlack: '🎲 빨강/검정',
+  }
+}
