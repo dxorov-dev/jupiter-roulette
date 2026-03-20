@@ -1,13 +1,15 @@
 {
   "build": {
-    "commands": {
-      "install": "npm ci",
-      "build": "npm run build"
+    "steps": {
+      "install": {
+        "commands": ["npm ci"]
+      },
+      "build": {
+        "commands": ["npm run build"]
+      }
     }
   },
   "deploy": {
-    "commands": {
-      "start": "npm start"
-    }
+    "commands": ["npm start"]
   }
 }
