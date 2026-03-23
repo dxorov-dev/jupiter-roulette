@@ -1,13 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-// Red numbers in European roulette
-const RED_NUMBERS = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36])
-
-function getNumberColor(num: number): 'red' | 'black' | 'green' {
-  if (num === 0) return 'green'
-  return RED_NUMBERS.has(num) ? 'red' : 'black'
-}
-
 class MarkovChainAnalyzer {
   private sequence: number[]
   private states: number[]
@@ -90,27 +82,21 @@ class MarkovChainAnalyzer {
 
 class RouletteDataProcessor {
   rawNumbers: number[] = []
-  sequences: { high_low: number[], odd_even: number[], red_black: number[] }
-  mappedSequences: { high_low: number[], odd_even: number[], red_black: number[] }
-  private lastColor: 'red' | 'black' = 'red'
+  sequences: { high_low: number[], odd_even: number[] }
+  mappedSequences: { high_low: number[], odd_even: number[] }
 
   constructor() {
-    this.sequences = { high_low: [], odd_even: [], red_black: [] }
-    this.mappedSequences = { high_low: [], odd_even: [], red_black: [] }
+    this.sequences = { high_low: [], odd_even: [] }
+    this.mappedSequences = { high_low: [], odd_even: [] }
   }
 
   addNumber(num: number): void {
     this.rawNumbers.push(num)
-
-    if (num !== 0) {
-      this.lastColor = getNumberColor(num) as 'red' | 'black'
-    }
-
     this.updateSequences()
   }
 
   private updateSequences(): void {
-    this.sequences = { high_low: [], odd_even: [], red_black: [] }
+    this.sequences = { high_low: [], odd_even: [] }
 
     for (let i = 0; i < this.rawNumbers.length; i++) {
       const num = this.rawNumbers[i]
@@ -141,37 +127,13 @@ class RouletteDataProcessor {
       } else if (col2_2Set.has(num)) {
         this.sequences.odd_even.push(2, 2)
       }
-
-      // 3. Красное/черное
-      if (num === 0) {
-        // Для zero используем цвет предшествующего числа
-        if (i > 0) {
-          let prevNum = this.rawNumbers[i - 1]
-          let j = i - 1
-          while (prevNum === 0 && j >= 0) {
-            prevNum = this.rawNumbers[j]
-            j--
-          }
-          if (prevNum !== 0) {
-            const prevColor = getNumberColor(prevNum)
-            this.sequences.red_black.push(prevColor === 'red' ? 1 : 2)
-          } else {
-            this.sequences.red_black.push(1) // default red
-          }
-        } else {
-          this.sequences.red_black.push(1) // первое число zero - красное по умолчанию
-        }
-      } else {
-        const color = getNumberColor(num)
-        this.sequences.red_black.push(color === 'red' ? 1 : 2)
-      }
     }
 
     this.updateMappedSequences()
   }
 
   private updateMappedSequences(): void {
-    this.mappedSequences = { high_low: [], odd_even: [], red_black: [] }
+    this.mappedSequences = { high_low: [], odd_even: [] }
 
     const mapping: Record<string, number> = {
       '1,1': 1,
@@ -199,7 +161,7 @@ class RouletteDataProcessor {
     }
   }
 
-  getMappedSequence(seqType: 'high_low' | 'odd_even' | 'red_black'): number[] {
+  getMappedSequence(seqType: 'high_low' | 'odd_even'): number[] {
     return this.mappedSequences[seqType]
   }
 }
@@ -249,14 +211,12 @@ export async function POST(request: NextRequest) {
     const results: {
       high_low: number[]
       odd_even: number[]
-      red_black: number[]
     } = {
       high_low: [],
-      odd_even: [],
-      red_black: []
+      odd_even: []
     }
 
-    for (const seqType of ['high_low', 'odd_even', 'red_black'] as const) {
+    for (const seqType of ['high_low', 'odd_even'] as const) {
       const mappedSeq = processor.getMappedSequence(seqType)
 
       if (mappedSeq.length < 2) {
@@ -320,8 +280,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       predictions: {
         mainDozen: transformedHighLow,      // Основная дюжина (1, 2, 3)
-        columns: transformedOddEven,        // Колоны (1, 2, 3)
-        redBlack: results.red_black         // Красное/черное (1, 2)
+        columns: transformedOddEven         // Колоны (1, 2, 3)
       }
     })
 

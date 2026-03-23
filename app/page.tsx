@@ -17,7 +17,6 @@ const LANGUAGES: Language[] = ['ru', 'tr', 'en', 'id', 'es', 'ms', 'ko']
 interface Predictions {
   mainDozen: number[]
   columns: number[]
-  redBlack: number[]
 }
 
 function getNumberColor(num: number): 'red' | 'black' | 'green' {
@@ -341,28 +340,6 @@ export default function JupiterApp() {
             </CardContent>
           </Card>
 
-          {/* Red/Black */}
-          <Card className="bg-[#262626] border-red-500 border-2">
-            <CardHeader className="py-2 px-3">
-              <CardTitle className="text-sm font-bold text-red-400">
-                {t('redBlack')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-2 pt-0">
-              <div className="flex flex-wrap gap-2 justify-center">
-                {predictions.redBlack.map((num, index) => (
-                  <div key={index} className="flex flex-col items-center">
-                    <span className="text-[10px] text-gray-400 mb-1">{index + 1}</span>
-                    <span className={`inline-flex items-center justify-center min-w-[2.5rem] h-10 rounded-lg text-lg font-bold ${
-                      num === 1 ? 'bg-red-600 text-white' : 'bg-gray-800 text-white border border-gray-600'
-                    }`}>
-                      {num}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
       )}
 

@@ -44,7 +44,6 @@ export type TranslationKey =
   | 'prediction'
   | 'mainDozen'
   | 'columns'
-  | 'redBlack'
 
 export const translations: Record<Language, Record<TranslationKey, string>> = {
   ru: {
@@ -71,7 +70,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     prediction: '🔮 ПРОГНОЗ',
     mainDozen: '🎯 ОСНОВНАЯ ДЮЖИНА',
     columns: '📊 КОЛОНЫ',
-    redBlack: '🎲 КРАСНОЕ/ЧЕРНОЕ',
   },
   tr: {
     title: 'JUPITER',
@@ -97,7 +95,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     prediction: '🔮 TAHMİN',
     mainDozen: '🎯 ANA DÜZİNE',
     columns: '📊 SÜTUNLAR',
-    redBlack: '🎲 KIRMIZI/SİYAH',
   },
   en: {
     title: 'JUPITER',
@@ -123,7 +120,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     prediction: '🔮 PREDICTION',
     mainDozen: '🎯 MAIN DOZEN',
     columns: '📊 COLUMNS',
-    redBlack: '🎲 RED/BLACK',
   },
   id: {
     title: 'JUPITER',
@@ -149,7 +145,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     prediction: '🔮 PREDIKSI',
     mainDozen: '🎯 LUSIN UTAMA',
     columns: '📊 KOLOM',
-    redBlack: '🎲 MERAH/HITAM',
   },
   es: {
     title: 'JUPITER',
@@ -175,7 +170,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     prediction: '🔮 PREDICCIÓN',
     mainDozen: '🎯 DOCENA PRINCIPAL',
     columns: '📊 COLUMNAS',
-    redBlack: '🎲 ROJO/NEGRO',
   },
   ms: {
     title: 'JUPITER',
@@ -201,7 +195,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     prediction: '🔮 RAMALAN',
     mainDozen: '🎯 DUKUN UTAMA',
     columns: '📊 KOLUM',
-    redBlack: '🎲 MERAH/HITAM',
   },
   ko: {
     title: 'JUPITER',
@@ -227,6 +220,5 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     prediction: '🔮 예측',
     mainDozen: '🎯 메인 더즌',
     columns: '📊 컬럼',
-    redBlack: '🎲 빨강/검정',
   }
 }
