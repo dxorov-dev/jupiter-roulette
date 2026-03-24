@@ -12,7 +12,7 @@ const RED_NUMBERS = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 
 
 const MIN_NUMBERS = 4
 const MAX_NUMBERS = 120
-const LANGUAGES: Language[] = ['ru', 'tr', 'en', 'id', 'es', 'ms', 'ko']
+const LANGUAGES: Language[] = ['ru', 'tr', 'en', 'de', 'id', 'es', 'ms', 'ko']
 
 interface Predictions {
   mainDozen: number[]
