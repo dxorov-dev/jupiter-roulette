@@ -68,8 +68,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     currentBase: '📋 ТЕКУЩАЯ БАЗА ЧИСЕЛ',
     noNumbersHint: 'Нет чисел. Нажмите на кнопки.',
     prediction: '🔮 ПРОГНОЗ',
-    mainDozen: '🎯 ОСНОВНАЯ ДЮЖИНА',
-    columns: '📊 КОЛОНЫ',
+    mainDozen: '📊 КОЛОНА',
+    columns: '🎯 ДЮЖИНА',
   },
   tr: {
     title: 'JUPITER',
@@ -93,8 +93,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     currentBase: '📋 MEVCUT VERİ TABANI',
     noNumbersHint: 'Sayı yok. Düğmelere tıklayın.',
     prediction: '🔮 TAHMİN',
-    mainDozen: '🎯 ANA DÜZİNE',
-    columns: '📊 SÜTUNLAR',
+    mainDozen: '📊 SÜTUN',
+    columns: '🎯 DÜZİNE',
   },
   en: {
     title: 'JUPITER',
@@ -118,8 +118,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     currentBase: '📋 CURRENT DATABASE',
     noNumbersHint: 'No numbers. Click buttons.',
     prediction: '🔮 PREDICTION',
-    mainDozen: '🎯 MAIN DOZEN',
-    columns: '📊 COLUMNS',
+    mainDozen: '📊 COLUMN',
+    columns: '🎯 DOZEN',
   },
   id: {
     title: 'JUPITER',
@@ -143,8 +143,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     currentBase: '📋 DATABASE SAAT INI',
     noNumbersHint: 'Tidak ada angka. Klik tombol.',
     prediction: '🔮 PREDIKSI',
-    mainDozen: '🎯 LUSIN UTAMA',
-    columns: '📊 KOLOM',
+    mainDozen: '📊 KOLOM',
+    columns: '🎯 LUSIN',
   },
   es: {
     title: 'JUPITER',
@@ -168,8 +168,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     currentBase: '📋 BASE DE DATOS ACTUAL',
     noNumbersHint: 'Sin números. Haz clic en los botones.',
     prediction: '🔮 PREDICCIÓN',
-    mainDozen: '🎯 DOCENA PRINCIPAL',
-    columns: '📊 COLUMNAS',
+    mainDozen: '📊 COLUMNA',
+    columns: '🎯 DOCENA',
   },
   ms: {
     title: 'JUPITER',
@@ -193,8 +193,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     currentBase: '📋 PANGKALAN DATA SEMASA',
     noNumbersHint: 'Tiada nombor. Klik butang.',
     prediction: '🔮 RAMALAN',
-    mainDozen: '🎯 DUKUN UTAMA',
-    columns: '📊 KOLUM',
+    mainDozen: '📊 KOLUM',
+    columns: '🎯 DUKUN',
   },
   ko: {
     title: 'JUPITER',
@@ -218,7 +218,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     currentBase: '📋 현재 데이터베이스',
     noNumbersHint: '숫자 없음. 버튼을 클릭하세요.',
     prediction: '🔮 예측',
-    mainDozen: '🎯 메인 더즌',
-    columns: '📊 컬럼',
+    mainDozen: '📊 컬럼',
+    columns: '🎯 더즌',
   }
 }
